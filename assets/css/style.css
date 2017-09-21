@@ -1,0 +1,84 @@
+body {
+	background-image: url('../images/background.png');
+	background-size: 100%;
+	font-family: 'Asap', sans-serif;
+	font-family: 'Carter One', cursive;
+}
+
+
+.container{
+	background-image: url('../images/textbg.png');
+	text-align: center;
+	font: white;
+	margin: 0 auto;
+	margin-top: 10%;
+	padding: 4%;
+	max-width: 600px;
+}
+
+.container-start{
+	background-image: url('../images/textbg.png');
+	text-align: center;
+	font: white;
+	margin: 0 auto;
+	margin-top: 10%;
+	padding: 4%;
+	max-width: 600px;
+}
+
+
+#questions-box{
+	margin-top: 100px;
+	max-width: 800px;
+}
+
+/*This is the questions+answer box*/
+.container-questions{
+	background-image: url('../images/textbg.png');
+	text-align: center;
+	font: white;
+	font-family: 'Asap', sans-serif;
+	margin: 0 auto;
+	padding: 4%;
+	
+}
+
+#start-button{
+	font-size: 32px;
+}
+
+#start-button:hover{
+	background-color: red;
+	color: yellow;
+}
+
+h1{
+	font-family: 'Carter One', cursive;
+	font-size: 82px;
+	text-shadow: 2px 2px #FF0000;
+}
+
+h2{
+	font-family: 'Carter One', cursive;
+	font-size: 48px;
+	text-shadow: 2px 2px #FF0000;
+}
+
+h3{
+	font-family: 'Carter One', cursive;
+}
+
+
+p{
+	font-family: 'Asap', sans-serif;
+	font-size: 24px;
+}
+
+
+#time-up-box{
+	height: 900px;
+	text-align: center;
+	padding: auto;
+/*	background-image: url('../images/slj.png');*/
+	background-height: 600px;
+}
