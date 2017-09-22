@@ -96,27 +96,51 @@ var questions = [{
 var qNo = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"];
 var qQ = [];
 var qA = [];
-var displayQ = [];
+var displayQs = [];
+var int;
 
-// for (var n=0; n < questions.length; i++) {
-//     displayQ[n] = [qNo[n], qQ[n], qA[n]];
-// }
-// console.log(displayQ(n));
 
 
 for (var i = 0; i < questions.length; i++) {
     qQ.push(questions[i].ques);
 }
+
 console.log(qQ);
 
 for (var i = 0; i < questions.length; i++) {
     qA.push(questions[i].ans);
 }
+
 console.log(qA);
 
+//
+for (var i=0; i < questions.length; i++) {
+    displayQs[i] = [qNo[i], qQ[i], qA[i]];
+}
+console.log(displayQs);
+
+
+
+//question loop
+function qLoop(){
+    var i =0;
+    function qLoopq(){
+        if (i == displayQs.length) clearInterval(int);
+        $("#question").html(i == qQ.length? "start" : qQ[i++])};
+    function qLoopa(){
+        if (i == displayQs.length) clearInterval(int);
+        $("#answer-options").html(i == qA.length? "start" : qA[i++])};
+
+    int && clearInterval(int);
+    int = setInterval(function(){qLoopq(), qLoopa() }, 10000);
+
+        // $("#answer-options").html(i == qA.length? "start" : qA[i++])}, 10000);
+        
+    };
+
+
+
 //Where all the correct answers are stored
-
-
 var correctAnswerList = [];
 
 for (var i = 0; i < questions.length; i++) {
@@ -179,9 +203,10 @@ function showQuestionBox(){
     $("#opening-box").hide();
     $("#questions-box").show();
     $("#timer").show();
+    qLoop();
     runTimer();
-    displayQ();
-    displayAns();
+    // displayQ();
+    // displayAns();
     //some function that will display the question and answer options
 };
 

@@ -1,10 +1,28 @@
 body {
-	background-image: url('../images/background.png');
-	background-size: 100%;
+/*	background-image: url('../images/background.png');
+	background-position: fixed;*/
 	font-family: 'Asap', sans-serif;
 	font-family: 'Carter One', cursive;
+	background: url("../images/background.png") repeat-x;
+ 	background-animation: slide 60s linear infinite;
 }
 
+.wrapper {
+  overflow: hidden;
+}
+
+.sliding-background {
+  
+}
+
+@keyframes slide{
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
 
 .container{
 	background-image: url('../images/textbg.png');
