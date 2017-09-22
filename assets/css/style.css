@@ -1,102 +1,88 @@
 body {
-/*	background-image: url('../images/background.png');
-	background-position: fixed;*/
-	font-family: 'Asap', sans-serif;
-	font-family: 'Carter One', cursive;
-	background: url("../images/background.png") repeat-x;
- 	background-animation: slide 60s linear infinite;
-}
-
-.wrapper {
-  overflow: hidden;
-}
-
-.sliding-background {
-  
-}
-
-@keyframes slide{
-  0%{
-    transform: translate3d(0, 0, 0);
-  }
-  100%{
-    transform: translate3d(-1692px, 0, 0);
-  }
-}
-
-.container{
-	background-image: url('../images/textbg.png');
-	text-align: center;
-	font: white;
-	margin: 0 auto;
-	margin-top: 10%;
-	padding: 4%;
-	max-width: 600px;
-}
-
-.container-start{
-	background-image: url('../images/textbg.png');
-	text-align: center;
-	font: white;
-	margin: 0 auto;
-	margin-top: 10%;
-	padding: 4%;
-	max-width: 600px;
+    background: url(../images/background.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Asap', sans-serif;
+    font-family: 'Carter One', cursive;
 }
 
 
-#questions-box{
-	margin-top: 100px;
-	max-width: 800px;
+.container {
+    background-image: url('../images/textbg.png');
+    text-align: center;
+    font: white;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 50px;
+    max-width: 600px;
 }
+
+.container-start {
+    background-image: url('../images/textbg.png');
+    text-align: center;
+    font: white;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 50px;
+    max-width: 600px;
+}
+
+
+#questions-box {
+    margin-top: 100px;
+    max-width: 800px;
+}
+
 
 /*This is the questions+answer box*/
-.container-questions{
-	background-image: url('../images/textbg.png');
-	text-align: center;
-	font: white;
-	font-family: 'Asap', sans-serif;
-	margin: 0 auto;
-	padding: 4%;
-	
+
+.container-questions {
+    background-image: url('../images/textbg.png');
+    text-align: center;
+    font: white;
+    font-family: 'Asap', sans-serif;
+    margin: 0 auto;
+    padding: 30px;
 }
 
-#start-button{
-	font-size: 32px;
+#start-button {
+    font-size: 32px;
 }
 
-#start-button:hover{
-	background-color: red;
-	color: yellow;
+#start-button:hover {
+    background-color: red;
+    color: yellow;
 }
 
-h1{
-	font-family: 'Carter One', cursive;
-	font-size: 82px;
-	text-shadow: 2px 2px #FF0000;
+h1 {
+    font-family: 'Carter One', cursive;
+    font-size: 82px;
+    text-shadow: 2px 2px #FF0000;
 }
 
-h2{
-	font-family: 'Carter One', cursive;
-	font-size: 48px;
-	text-shadow: 2px 2px #FF0000;
+h2 {
+    font-family: 'Carter One', cursive;
+    font-size: 48px;
+    text-shadow: 2px 2px #FF0000;
 }
 
-h3{
-	font-family: 'Carter One', cursive;
-}
-
-
-p{
-	font-family: 'Asap', sans-serif;
-	font-size: 24px;
+h3 {
+    font-family: 'Carter One', cursive;
 }
 
 
-#time-up-box{
-	height: 900px;
-	text-align: center;
-	padding: auto;
-/*	background-image: url('../images/slj.png');*/
-	background-height: 600px;
+p {
+    font-family: 'Asap', sans-serif;
+    font-size: 24px;
+}
+
+
+#time-up-box {
+    height: 900px;
+    text-align: center;
+    padding: auto;
+    /*	background-image: url('../images/slj.png');*/
+    background-height: 600px;
 }

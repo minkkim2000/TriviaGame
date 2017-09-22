@@ -1,4 +1,3 @@
-
 // //Pseuco Code:
 
 // Click "Start button" to start game
@@ -26,13 +25,16 @@
 
 
 
-$( document ).ready(function() {
+$(document).ready(function() {
+
+// for (var i = 0; i < questions.length; i++) {
+
+    
+// }
 
 
-
-
-// Q & A
-var questions = [{
+    // Q & A
+    var questions = [{
             ques: "Question 1?",
             ans: ["111", "222", "333", "444"],
             name: "q1",
@@ -91,161 +93,146 @@ var questions = [{
             ans: ["111", "222", "333", "444"],
             name: "q10",
             correct: "444",
-        }];
-
-var qNo = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"];
-var qQ = [];
-var qA = [];
-var displayQs = [];
-var int;
+        }
+    ];
 
 
+    var qNo = ["1. ", "2. ", "3. ", "4. ", "5. ", "6. ", "7. ", "8. ", "9. ", "10. "];
+    var qQ = []; //question array by index
+    var qA = []; //answer option array by index
 
-for (var i = 0; i < questions.length; i++) {
-    qQ.push(questions[i].ques);
-}
 
-console.log(qQ);
-
-for (var i = 0; i < questions.length; i++) {
-    qA.push(questions[i].ans);
-}
-
-console.log(qA);
-
-//
-for (var i=0; i < questions.length; i++) {
-    displayQs[i] = [qNo[i], qQ[i], qA[i]];
-}
-console.log(displayQs);
+    var displayQs = []; //object of arrays of Q + A by index
 
 
 
-//question loop
-function qLoop(){
-    var i =0;
-    function qLoopq(){
-        if (i == displayQs.length) clearInterval(int);
-        $("#question").html(i == qQ.length? "start" : qQ[i++])};
-    function qLoopa(){
-        if (i == displayQs.length) clearInterval(int);
-        $("#answer-options").html(i == qA.length? "start" : qA[i++])};
-
-    int && clearInterval(int);
-    int = setInterval(function(){qLoopq(), qLoopa() }, 10000);
-
-        // $("#answer-options").html(i == qA.length? "start" : qA[i++])}, 10000);
-        
-    };
-
-
-
-//Where all the correct answers are stored
-var correctAnswerList = [];
-
-for (var i = 0; i < questions.length; i++) {
-    correctAnswerList.push(questions[i].correct);
-}
-
-console.log(correctAnswerList);
-
-
-
-
-//Where all the user answers are stored
-var userAnswerList = [];
-
-
-
-
-
-
-// // Timer Stuff
-var timeLeft = 11;
-
-
-function runTimer() {
-    stopTime = setInterval(downtime, 1000);
-};
-
-function downtime() {
-        timeLeft--;
-        $("#time-left").html(timeLeft);
-
-        if (timeLeft === 0) {
-        stop();
-      }
-    };
-
-function stop() {
-    clearInterval(stopTime);
-};
-  
-
-
-
-// START GAME HERE //
-function startgame(){
-    $("#results-box").hide();
-    $("#time-up-box").hide();
-    $("#timer").hide();
-    $("#questions-box").hide();
-    $("#opening-box").show();
-    $("#start-button").on("click", showQuestionBox);
-};
-
-
-
-
-
-//SHOW QUESTIONS BOX//
-function showQuestionBox(){
-    $("#opening-box").hide();
-    $("#questions-box").show();
-    $("#timer").show();
-    qLoop();
-    runTimer();
-    // displayQ();
-    // displayAns();
-    //some function that will display the question and answer options
-};
-
-setInterval(displayQ(), 10500);
-
-function displayQ(){
     for (var i = 0; i < questions.length; i++) {
-        if (qNo[i] === questions[i].name){
-            $("#question").append(questions[i].ques);
-        };
-    };
+        qQ.push(questions[i].ques);
+    }
 
-};
-
-
-
-//figure out how to display this as a list
-function displayAns(){
     for (var i = 0; i < questions.length; i++) {
-        if (qNo[i] === questions[i].name){
-            $("#question").append(questions[i].ans);
+        qA.push(questions[i].ans);
+    }
+
+    //
+    for (var i = 0; i < questions.length; i++) {
+        displayQs[i] = [qNo[i], qQ[i], qA[i]];
+    }
+    console.log(displayQs);
+
+    // console.log(displayQs[1][0]);
+    // console.log(displayQs[1][1]);
+    // console.log(displayQs[1][2]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Where all the correct answers are stored
+    var correctAnswerList = [];
+
+    for (var i = 0; i < questions.length; i++) {
+        correctAnswerList.push(questions[i].correct);
+    }
+
+    console.log(correctAnswerList);
+
+
+
+
+
+
+
+
+    //Where all the user answers are stored
+    var userAnswerList = [];
+
+    // $().on("click", )
+    // whatever answer clicked will be stored into the array 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // START GAME HERE //
+    function startgame() {
+        $("#results-box").hide();
+        $("#time-up-box").hide();
+        $("#timer-counter").hide();
+        $("#questions-box").hide();
+        $("#opening-box").show();
+        $("#start-button").on("click", showQuestionBox);
+    };
+
+
+    
+
+
+    //SHOW QUESTIONS BOX//
+    function showQuestionBox() {
+        $("#opening-box").hide();
+        $("#questions-box").show();
+        $("#timer-counter").show();
+        displayQAs();//some function that will display the question and answer options
+    };
+
+
+function displayQAs(){
+    // TIMER STUFF
+    var counter = 11;
+        var countdown = setInterval(timeIt, 1000);
+        function timeIt() {
+            counter--;
+            $("#timer").html("<h2>" + counter + "</h2>");
+
+            if (counter === 0) {
+                clearInterval(countdown);
+            };
         };
+
+    for (var j = 0; j < questions.length; j++) {
+        $("#question").html(displayQs[j][0] + displayQs[j][1]);
+
+        $("#answer-options").append("<ul>" + "</ul>");
+        for (var i = 0; i < 4; i++) {
+            ("#answer-options").append("<li>" + something + "</li>");
+        }
+
+        // $("#answer-options").html();
+
+
     };
 };
 
 
-//============start game
 
-startgame();
+    
 
+
+    startgame();
 });
 
 
 
 
+//============start game
 
-
-
-
-
-
-
+// 
